@@ -1,0 +1,168 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    background-color: pink;
+}
+
+.colum {
+    float: left;
+}
+
+.nav__pc{
+    width : 85%;
+   display: flex;
+}
+.nav__pc .space {
+    flex: 1;
+    background-color: pink;
+    height: 48px;
+
+}
+
+.navbar {
+    
+    background-color: pink;
+    color: white;
+    height: 48px;
+    line-height: 48px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.nav__mobile {
+
+    position: relative;
+    width : 15%;
+   
+    background-color: pink;
+    color: white;
+    height: 48px;
+    line-height: 48px;
+
+}
+.nav__mobile .nav__item {
+   position: absolute;
+   top :0;
+  left: 10px;
+ 
+}
+.menu {
+    background-color: white;
+    max-width:  230px ;
+    transform: translateX(-100%);
+    opacity: 0;
+    /* display: none; khi nó đã bị kéo ra khỏi màn hình k cần thiết phải display : none*/ 
+
+}
+.menu li {
+    padding: 20px;
+    border-right: 2px solid red;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: contain;
+}
+
+
+
+
+.overflow {
+   
+    position: fixed;
+    top: 0;
+    right: 0; 
+    bottom: 0;
+    left: 0;
+    background-color: blue ;
+    opacity: 0.1;
+    display: none;
+   
+
+}
+
+
+
+
+@media (min-width : 1024px)
+{
+    .nav__mobile {
+        display: none
+    }
+    .nav__pc {
+        width : 100%
+    }
+}
+
+@media (max-width :1023px) {
+    .nav__mobile {
+        width : 100%
+    
+    }
+
+    .nav__pc {
+        display: none
+    } 
+
+    input {
+        display: none;
+    }
+
+    .btn:checked ~.overflow {
+        display: block;
+        animation : openOverplow ease 2s;
+        
+    }
+    
+    .btn:checked ~.menu  /*Sử dụng lớp giả của input để bấm vào thì hiện ra menu */
+    {
+    display: inline-block;
+    transform: translateX(0); /*Phải đưa nó ra , rồi nó sẽ lây thuộc tính animation ở trên*/
+    opacity: 1;
+/* Cách 1 */
+    transition: transform linear 2s; /*Đinh nghĩa animatin cho thuộc tính nào ví dụ opacity hoặc transform */
+/* Cách 2 để đi từ ngoài vào  */
+    /* animation : faceIn linear 2s; Đây chỉ là hiệu ứng thôi . còn vị trí nó vẫn lấy vị trí hiện dựa trên css trên
+    */
+}
+
+
+@keyframes faceIn {
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(300);
+    }
+    
+}
+
+}
+@keyframes faceIn2 {
+    from{
+        transform: translateX(300%);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(10%);
+    }
+    
+}
+@keyframes openOverplow {
+    from{
+       
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+       
+    }
+    
+}

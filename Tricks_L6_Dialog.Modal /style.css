@@ -1,0 +1,65 @@
+/* Chỉ cho cái đầu tiên được khai báo nhận thuộc tính  */
+/* #name:target {
+    color : red; 
+}
+#h1:target {
+    color: red;
+} */
+
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+.dialog {
+    position: fixed;
+    top:0; 
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+    /*Ẩn element khỏi DOM luôn coi như k tồn tại luôn */
+    /* display: none ;  */
+    /* Vẫn tồn tại vo hình vẫn chiếm khoảng không gian nhất định  . nên sử dụng nếu muốn nó hiển thị lên mờ mờ mà k cần sử dụng keyframe*/
+    visibility: hidden;
+    opacity: 0;
+}
+ .overlay {
+     background-color: rgba(0,0,0, 0.2);
+ }
+
+ .overlay-close {
+     /* Cứ ấn vào 1 cái href bất kỳ khác là thoát khỏi #my-dialog : target */
+     position: absolute;
+     height: 100%;
+     width : 100%;  
+    cursor: default;
+ }
+.dialog-body {
+    max-width: 400px;
+    /* position: relative; */
+    padding : 16px;
+    background-color: #fff;
+    z-index: 10;
+ 
+    
+    
+    align-self: center;
+   
+}
+#my-dialog:target {
+    visibility : visible;
+    opacity: 1;
+    transition: opacity linear 0.2s;
+}
+.dialog-close-btn {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    text-decoration :#333; 
+
+    background-image: url(image_gốc) , url(image_pul_back); /* Cách tạo 1 ảnh pull back cho ảnh gốc */
+}

@@ -1,0 +1,100 @@
+<!-- 
+    #BEM 
+    -là tiêu chuẩn đặt têm claas khi viết css
+    
+    ## Ý nghĩa
+    -Viết tắt của : Block Element Modifier
+    -Block : khối 
+    -Element : Thành phần trong khối 
+    -Modifier : Bổ sung ý nghĩa của Block hoặc Element
+
+    ## Tại sao phải dùng BEM 
+    -Mỗi người đặt 1 kiểu 
+    -Members đặt class trùng nhau , CSS đè lên nhau 
+
+    ## Cú pháp 
+    - .block 
+    - .block__element
+
+    -.block--modifier
+    - .block__element--modifier
+
+    ## Tính ứng dụng 
+    -Xây dựng layout website
+    -Xây dựng thành phần trên website
+
+    ##Ưu điểm
+    - Tính rõ ràng
+    -Tái sử dụng dễ dàng
+    -Giúp team làm việc với nhau dễ dàng
+    -Tính modue, không lo CSS của class này ảnh hưởng tới CSS của class khác
+
+    ## Nhược điểm 
+    -Tên class dài 
+    -Một số người cho là xấu 
+
+    ## Khi nào  dùng BEM là phù hợp 
+    -Dự án nhiều members
+    -Dự án lớn số lượng page nhiều hợc số lượng các thành phần trên giao diện nhiều 
+
+    ## Thực hành 
+    - Làm button
+        -Enabled: Pointer, Hover efect
+        -Disabled : Arrow, no efect trạng thái nó k được ấn vào 
+    -Làm message
+    -Làm 1 thành phần trên website    
+
+  ## Trường hợp Block lồng Block 
+  -Block con là thành phần dùng chung
+  btn btn--success
+  -Block con chứa nhiều Element
+  header-search__elemet
+
+
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./style.css">
+     <title>BEM</title>
+ </head>
+ <body>
+
+
+    <div>
+    <button class="btn btn--success btn--disabled btn--size-s ">GO TO NEXT APPROVAL</button>
+    <button class="btn btn--warn btn--disabled btn--size-s">OK </button>
+    <button class="btn btn--danger btn--disabled btn--size-s">TRY AGAIN </button>
+    </div>
+
+  <div>
+    <button class="btn btn--success ">GO TO NEXT APPROVAL</button>
+    <button class="btn btn--warn">OK </button>
+    <button class="btn btn--danger">TRY AGAIN </button>
+  </div>
+
+  <div>
+    <button class="btn btn--success  btn--size-l  ">GO TO NEXT APPROVAL</button>
+    <button class="btn btn--warn btn--size-l ">OK </button>
+    <button class="btn btn--danger btn--size-l ">TRY AGAIN </button>
+  </div>
+
+    <!-- <div>
+        <div class="btn btn--success btn--size-s">Success</div>
+        <div class="btn btn--danger btn--size-s">Danger</div>
+      </div>
+      
+      <div>
+        <div class="btn btn--success" disabled>Success</div>
+        <div class="btn btn--danger">Danger</div>
+      </div>
+      
+      <div>
+        <div class="btn btn--success btn--size-l">Success</div>
+        <div class="btn btn--danger btn--size-l">Danger</div>
+      </div> -->
+ </body>
+ </html>

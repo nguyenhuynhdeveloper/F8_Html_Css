@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Document</title>
+
+</head>
+
+    <body>
+    <div class="nav">
+        <div class="nav__pc colum">
+            
+            <div class="navbar">Home</div>
+            <div class="navbar">Menu</div>
+            <div class="navbar">Information</div>
+            <div class="navbar">Contact</div>
+            <div class="space"></div>
+        </div>
+
+        <label for="open" class="nav__mobile colum">
+            <div class="nav__item">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </label>
+    </div>
+
+    <input type="checkbox" id="open" class="btn">
+    
+    <label for="open" class="overflow"></label>
+
+    <div class="menu">
+
+    <ul>
+        <li>Home</li>
+        <li>Menu </li>
+        <li>Information</li>
+        <li>Contact</li>
+        <li>Report</li>
+    </ul>
+    </div>
+
+<!-- 
+transform: translateX(-100%);  Dùng để đưa đẩy 1 đối tượng nào đó theo trục x y z
+ 
+transition: transform linear 2s; Đinh nghĩa animatin cho thuộc tính nào ví dụ opacity hoặc transform đã được khai báo 2 giá trị khác nhau bởi 1 tác động nào đó
+
+@keyframes faceIn2 {
+    from{
+        transform: translateX(300%);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(10%);
+    }  
+}  
+Dùng để tạo ra 1 hiệu ứng animation dùng cho nhiều nơi 
+
+animation : NameKeyFrames linear .4s;  Dùng để gắn hiệu ứng animation cho 1 đối tượng 
+ -->
+    
+    </body>
+</html>

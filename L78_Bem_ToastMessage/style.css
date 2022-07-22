@@ -1,0 +1,182 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue";
+  background-color: #f4f4f5;
+}
+
+body > div {
+  margin: auto; /* Nội dung chứa bao nhiêu thì margin chừa bấy nhiêu */
+}
+ 
+  /* ======= Buttons ======== */
+  
+  /* Block */
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    min-width: 120px;
+    transition: opacity 0.2s ease;
+  }
+  
+  /* Modifier */
+  .btn--size-l {
+    padding: 16px 56px;
+  }
+  
+  .btn--size-s {
+    padding: 8px 32px;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  
+  .btn + .btn {  /** Bắt thằng btn nào mà đằng trước của nó có thằng btn */
+    margin-left: 16px;
+  }
+  
+  .btn--success {
+    background-color: #71be34;
+  }
+  
+  .btn--warn {
+    background-color: #ffb702;
+  }
+  
+  .btn--danger {
+    background-color: #ff623d;
+  }
+  
+  .btn--disabled {
+    opacity: 0.5 !important;
+    cursor: default;
+  }
+  
+  /* ======= Toast message ======== */
+  
+#toast {
+  position:fixed;  /** Luôn cố định ở ở 1 vị trí chỉ định  ==> Đây chính là vị trí của thằng toast ở chế độ mặc định khi chưa bị đẩy ra ngoài màn hình*/
+  top: 32px;
+  right: 30px;
+  z-index: 999999; /*Để toast message luôn ở trên , tránh bị thằng khác đè lên */
+
+}
+  .toast { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px 0;
+    min-width: 200px;
+    max-width: 480px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    
+    /* Forward để dừng ở điểm cuối của animation */
+    transition: all linear .3s ;  /*Để tất cả các hiệu ứng nó chạy đều đều trong 0.3s*/
+  }
+@keyframes slideInLeft {   /** Hiệu ứng từ vị trí ban đầu bên ngoài đẩy vào bên trong về vị tró mà CSS đã fixed */
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 32px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+}
+/* Hiệu ứng để đưa tin nhắn về chế độ mặc định ẩn đi mờ từ từ */
+ @keyframes faceOut { 
+   to {
+     opacity: 0;
+   }
+ }
+
+  .toast--success{
+    border-color: #47d864;
+  }
+
+  .toast--success .toast__icon {
+  color:#47d864;
+}
+
+.toast--info{
+  border-color: #2f86eb;
+}
+
+.toast--info .toast__icon {
+
+  color:#2f86eb;
+}
+
+.toast--warning{
+  border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+
+  color:#ffc021;
+}
+
+.toast--error{
+  border-color: #ff623d;
+}
+
+.toast--error .toast__icon {
+
+  color:#ff623d;
+}
+
+.toast + .toast {
+  margin-top: 24px;
+}
+
+.toast__icon {
+  font-size: 24px;
+}
+
+.toast__icon , .toast__close{
+padding: 0 16px;
+
+}
+
+.toast__body{
+flex-grow: 1; /*Khi dù chữ có ngắn vẫn chiếm hết khoảng không gian có thể*/
+}
+
+.toast__title{
+font-weight: 16px;
+font-size: 16px;
+color: #333;
+}
+
+.toast__msg{
+font-size: 14px;
+color: #888;
+margin-top: 6px;
+}
+
+.toast__close{
+font-size: 20px;
+cursor: pointer;
+}
+
+

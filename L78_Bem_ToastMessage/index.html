@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="toast"></div>   <!-- Khối này tạo sẵn để chứa khối tin nhắn hiện ra -->
+ 
+    <div>
+      <div onclick = "showSuccessToast();" class="btn btn--success" > Show Success toast </div>   <!-- Đây đã có bắt sự kiện onclick trên đây rồi  -->
+      <div onclick = "showErrorToast();" class="btn btn--danger" > Show error toast</div>
+    </div>
+
+
+<script>
+
+// HÀM TỔNG inner dữ liệu html và chuyển động của tin nhắn  
+function toast ({ title = "", message = "" , type ="info", duration = 3000})   
+{
+const main =document.getElementById("toast");
+if(main) 
+{
+  const toast =document.createElement("div");    // Đây chính là hàm tạo ra 1 khối div  có tên là toast
+
+  const icons = {
+  success: "fas fa-check-circle",
+  info: "fas fa-info-circle",
+  warning: "fas fa-exclamation-circle",
+  error:"fas fa-exclamation-circle",
+};
+
+  const icon = icon[type];
+  const delay = (duration / 1000).toFixed(2);  // Làm tròn tới 2 con số 
+  toast.classList.add("toast",`toast--${type}`);
+  toast.style.animation = `animation:  slideInLeft ease 2s , faceOut linear 2s  ${delay}s forwards `;    // Gán animate cho toast 
+  toast.innerHTML = `
+          <div class="toast__icon">
+            <i class="${icon}"></i>
+          </div>
+          <div class="toast__body">
+            <h3 class="toast__title">${title}</h3>
+            <p class="toast__msg">${message}</p>
+          </div>
+          <div class="toast__close">
+            <i class="fas fa-times"></i>
+          </div>
+            `;
+         main.appendChild(toast);    // Nhét cái khối div vừa tạo được vào trong thằng main chính là Bắt từ thằng id toast ban đầu 
+ }              // Gán khối html vào trong toast 
+}
+ 
+// Auto remove toast
+const autoRemoveId = setTimeout(function(){
+            main.removeChild(toast);      //  Sau thời gian hiển thị xong thì xoá toast đó ra khỏi DOM 
+          },duration +1000 )   
+
+// Remove toast when click 
+toast.onclick =function(e) {
+  if (e.target.closest('.toast__close')){         // Khi bấn trúng cái dấu x để đóng là cho chạy hàm xoá toast ra khỏi DOM luôn 
+    main.removeChild(toast);       
+    clearTimeout(autoRemoveId);  // Bỏ đi chế độ tự động đóng toast message : clear hết thời gian đếm ngược của hàm autoRemoveId
+  }
+}
+
+ 
+// Hàm được gọi khi bấm vào Show Success Toast
+   function  showSuccessToast (){
+    toast({
+     title: 'Success',
+     message: 'Bạn đã đăng ký tài khoản thành công tại F8',
+     type: 'success',
+     duration : 3000,
+   });  
+   }
+
+   // Hàm được gọi khi bấm vào Show error toast ==> bên trong nó chỉ đơn giản là cung cấp các đối số cho hàm toast
+   function   showErrorToast(){
+    toast({
+     title: 'Thất bại ',
+     message: 'Bạn đã đăng ký tài khoản thất bại ',
+     type: 'error',
+     duration : 3000,
+   });
+   }
+
+
+</script>
+</body>
+</html>
+

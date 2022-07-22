@@ -1,0 +1,108 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+/* 
+.box {
+    background-color: orange;
+    height: 100px ;
+
+    }
+    
+     h3{
+    
+     }
+
+*/
+
+/* Căn giữa theo chiều ngang  */
+
+/*.box {
+background-color: orange;
+height: 100px ;
+text-align: center; Có thể ở thẻ cha hoặc con đều được  vì có có tính chất thừa kế
+}
+
+ h3{ 
+ } */
+
+/* Căn giữa theo chiều dọc */
+
+    /* .box {
+    background-color: orange;
+    height: 100px ;
+    line-height: 100px; Có thể dùng ở thẻ cha hoặc thẻ con 
+    }
+    
+     h3{
+    
+     } */
+
+/* Tự động căn ra giữa ô sử dụng 1 biến local*/
+/* .box {
+    background-color: orange;
+    --height: 100px ;
+    height: var(--height);
+    line-height: var(--height); 
+    text-align: center ; 
+    }
+    
+     h3{
+    
+     } */
+
+
+    /* Tự động căn ra giữa ô : Có thể căn được nhiều Item */
+    .box {
+    background-color: orange;
+    height: 100px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    h3{
+    margin: auto ;
+    justify-self: center;
+    align-self: center;
+        }
+
+    /* Trong trường hợp k sài được flex Không có cách nào là cố định cả cứ đùng đến khi nào được thì thôi  */
+    /* .box {
+    background-color: orange;
+    height: 100px ;
+    position: relative;
+    }
+    
+        h3{
+    
+        position: absolute;
+        top: 50%;
+        left: 50%;
+            transform : translate(-50% ,-50%) ; 
+        transform : translateY(-50% ) translateX(-50%) ;
+        
+        } */
+
+        /* Trong trườgn hợp phải có 1 vạch dọc ở bên trái hay bên phải   thì sử dụng sussdo element*/
+        /* .box {
+        background-color: orange;
+        height: 200px ;
+        display: flex;
+        }
+        
+            h3{
+            margin: auto; 
+            position: relative;
+            } 
+
+            h3::before {
+                position: absolute;          
+                content: "";
+                border-left: 3px solid red;
+                height: 100px;     
+                top: 50%;
+                left: -10px;
+                transform : translateY(-50%) ; 
+            } */

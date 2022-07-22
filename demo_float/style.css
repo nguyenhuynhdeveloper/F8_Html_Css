@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+.box {
+   
+}
+.float {
+
+    /* display : inline-block;  */ /*Đưa tất cả các block có class đó về 1 đường ngang có thuọc tính là block */
+
+    /* float: left;   Đẩy hết các khối có class đó về bên trái và sau đó căn khoảng cách với nhau bằng margin */
+    float: right;
+
+    /* float: inline-start; */
+     /* float:inline-end; */
+
+
+    background-color: pink ;
+    --height: 100px;
+    height: var(--height);
+    width : 100px;
+    line-height: var(--height);
+
+    text-align: center;
+}
+
+.float3 {
+    padding: 20px;
+    margin: 20px;
+}
+.float + .float {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* 
+float thuộc tính chỉ định liệu 1 phàn tử có nên trôi ssang trái phải hay không 
+Các phần tử được định vị relative bỏ qua thuộc tính float
+Tính chất thừa kế không
+cú pháp javascript : element.style.cssFloat = "left"
+cú pháp CSS : float: none| left | right |initial | inherit ;
+
+Để ngăn cản chuyện các phần tử bị nổi vượt quá phạm bị của khối 
+.box::after{
+clear: both ; 
+}
+
+*/

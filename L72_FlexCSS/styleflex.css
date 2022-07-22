@@ -1,0 +1,355 @@
+/*  CSS flexbox */
+/*
+    display : flex | inline-flex
+    //Xét ở flex Container
+    Khi sử dụng thuộc tính flex thì mặc định sẽ kích hoạt flex direction :row  && justify-content : flex-start
+    
+    
+
+    flex-flow : flex-direction + flex-wrap // Cú pháp short hand
+    //Xét ở flex Container
+    vd flex-flow :row wrap; = flex-direction : row; flex-wrap: wrap;
+    
+    flex-direction: row | column  
+    // Xét ở flex Container
+    row là nằm ngang . colum là nằm dọc 
+
+    flex-wrap : nowrap | wrap | wrap-reverse 
+    // Xét ở flex Container
+    Đảm bảo tất cả nằm ngang không xuống dòng | cho xuống dòng  | đảo đầu  cross Axis tức đẩy lên trên 
+
+
+
+
+    justify-content: flex-start | flex-end | center | space-between | space-around 
+    // Xét ở flex container
+    Căn được phương hướng theo chiều ngang main axis của các flex item trong nó
+    space-between : sẽ tạo ra 1 khoảng trắng  sẽ đẩy 2 thăng con về kịch 2 bên lề
+    space-around : sẽ tạo ra 1 khoảng trắng đều nhau giữa các flex Item trong nó thành ra giữa 2 flex item sẽ dày gấp đôi flex item so với lề
+    space-evenly : Trong trường hợp muốn tất cả khoảng cách là băng nhau 
+
+    justify-seft: flex-start | flex-end | center 
+    //Xét ở flex-Item 
+    Căn được phương hướng của flex Item theo chiều ngang main Axis 
+ 
+
+
+    
+    align-content: flex-start | flex-end | center | space-between | space-around |stretch
+    // Xét ở flex container
+    Căn được phương hướng theo chiều dọc cross axis của các flex item trong nó
+    space-between : sẽ tạo ra 1 khoảng trắng  sẽ đẩy 2 thăng con về kịch 2 bên đầu cuối trang
+    space-around : sẽ tạo ra 1 khoảng trắng đều nhau giữa các flex Item trong nó thành ra giữa 2 flex item sẽ dày gấp đôi flex item so với đầu cuối trang 
+    space-evenly :Trong trường hợp muốn tất cả khoảng cách là băng nhau 
+    stretch : Đưa flex Item về phủ kịch hết đầu cuối trang và diện tích flex container
+ 
+    align-items :    flex-start | flex-end | center |baseline |stretch
+    //Xét ở flex container
+    Căn được chiều dọc theo chiều dọc cross Axis cho các flex Item con trong nó
+    Ex : 
+    align-items: flex-end;  Đây là xét cho thăng cha <==>  align-self : flex-end khi xét cho thằng con 
+    Các flex Item sẽ đặt hết xuống dưới cross end ==> nghĩa đặt cuối trang
+
+    align-self: flex-start | flex-end | center 
+    //Xét ở flex-Item 
+    Căn được chiều dọc theo chiều cross Axis 
+
+
+
+    flex: <numbber> // Cú pháp shorthand cho flex-basis , flex-grow, flex-shrink 
+    //Xét ở flex-Item 
+    Trong 1 flex box khi chỉ cho 1 flex item  mang thuộc tính flex: số lớn hơn 1 , thì nó sẽ cố gắng chiếm hết chiều nằm ngang main axis
+
+
+    vd: flex : 1 
+    = flex-grow: 1;
+    flex-shrink : 1;
+    flex-basis : 1;
+    
+
+    flex-basis: <length>  
+    //Xét ở flex Item 
+    Quy định kích thước chiều ngang cho flex item Ex flex-basis : 30%
+
+    flex-grow: <number> 
+    //Xét ở flex Item 
+    Thay đổi đươc kích thước của flex Item  theo chiều main size ( main Axis)
+
+    flex-shink: <number> 
+    //Xét ở flex Item 
+    Thay đổi đươc kích thước của flex Item  nhỏ lại 
+
+
+    
+
+    order: <number>  
+    //Xét ở flex-Item 
+    Quyết định thứ tự flex Item nào được hiện trước thằng nào hiện sau 
+    Đánh số thứ tự xuất hiện cứ thằng flex item nào số nhỏ hơn sẽ gần main start hơn thì xuất hiện đầu 
+*/
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ccc;
+}
+
+/* Navbar */
+.nav {
+    min-height: 42px;
+    background-color: #EF5122;
+    display: flex; /* display : flex sẽ đặt trong thẻ cha
+    Khi sử dụng thuộc tính flex thì mặc định sẽ kích hoạt flex direction  có thuộc tính main axis là chiều ngang + justify-content : flex-start*/
+    /*
+      Ngoài cách này, các bạn có thể
+      sử dụng 1 trong 2 cách mình
+      comment phía dưới
+    */
+    justify-content: space-between; /*Sẽ đẩy 2 th về 2 bên */
+}
+
+/* Cách này */
+/* .nav-list:nth-child(1) {
+  margin-right: auto;
+} */
+
+/* Hoặc cách này */
+/* .nav-list:nth-child(2) {
+  margin-left: auto;
+} */
+
+.nav-list {
+    padding-left: 0;
+    margin: auto 16px;
+}
+
+.nav-item {
+    color: #fff;
+    list-style: none;
+    margin: 0 8px;
+    display: inline-block;
+}
+
+/* Form layout */
+.form-container {
+    max-width: 720px;
+    padding: 32px;
+    margin: 36px auto 0 auto;
+    background-color: #fff;
+}
+
+.form__row {
+    padding: 8px 0;
+    display: flex;
+}
+
+.form__label {
+    min-width: 90px; /*Đưa chiều dài của label là 90px còn lại bao nhiêu  form__input mang thuộc tính flex:1 nó cứ chiếm thôi */
+}
+
+.form__input { /*Thẻ flex box cha của thằng này là form__row*/
+    flex: 1; /*Trong 1 flex box khi chỉ cho 1 flex item  mang thuộc tính flex: số lớn hơn 1 , thì nó sẽ cố gắng chiếm hết chiều nằm ngang main axis*/
+}
+
+/* Column layout */
+.column-layout {
+    margin-top: 36px;
+    padding: 12px 0;
+    background-color: #fff;
+    display: flex;
+}
+
+.column-item {
+    padding: 0 16px;
+}
+
+.sidebar-one {
+    flex: 1; /*Trọng số để chia chiều ngang main axis */
+    order: 1;
+}
+
+.sidebar-two {
+    flex: 1; /*Trọng số để chia chiều ngang main axis */
+    order: 3; /*Đánh số thứ tự xuất hiện cứ thằng flex item nào số nhỏ hơn sẽ gần main start hơn thì xuất hiện đầu */
+}
+
+.main-column {
+    flex: 3; /*Trọng số để chia chiều ngang main axis */
+    order: 2;
+}
+
+/* Feature layout */
+.feature-layout {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* PC, Tablet */
+@media (min-width: 740px) {
+    .feature-layout {
+        flex-direction: row;
+    }
+}
+
+.feature-item {
+    padding: 12px 16px;
+    margin-top: 16px;
+    flex-basis: 30%;  /* Quy định kích thước chiều ngnag cho flex item */
+}
+
+.feature-item:nth-child(1) {
+    background-color: rgb(192, 227, 222);
+}
+
+.feature-item:nth-child(2) {
+    background-color: rgb(227, 200, 192);
+}
+
+.feature-item:nth-child(3) {
+    background-color: rgb(226, 192, 227);
+}
+
+/* Wrap layout */
+.wrap-layout {
+    background-color: #fff;
+    margin-top: 36px;
+    padding: 12px 0 32px 0;
+    display: flex;
+    justify-content: space-around;  /*
+    justify-content : dùng cho thẻ cha
+    Để đẩy bao bọc các flex Item bới khoảng trắng bằng nhau . thành ra giữa 2 flex item sẽ dày gấp đôi flex item so với lề
+     Trong trường hợp muốn tất cả khoảng cách là băng nhau thì dùng  justify-content: space-evenly
+    */
+    flex-wrap: wrap-reverse; /* Dùng để các flex tự động xuống dòng wrap-reverse thì nó sẽ tự động nhảy lên trên */
+}
+
+.wrap-layout__item {
+    width: 148px;
+    height: 90px;
+    color: #fff;
+    text-align: center;
+    line-height: 90px;
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 20px;
+    background-color: #EF5122;
+}
+
+/* Center layout */
+.center-layout {
+    background-color: rgb(192, 227, 194);
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    max-width: 640px;
+    height: 360px;
+    display: flex;
+}
+
+.center-layout__item {
+    font-size: 42px;
+    font-weight: 700;
+    margin: auto;
+    
+    /*
+    Để căn giữa 1 flex item nằm duy nhất trong flex box thì 
+    thằng cha  flex Box display: flex
+    thằng con flex item margin: auto 
+    */
+    /*
+      Cũng có cách khác là các bạn
+      thêm 2 thuộc tính vào flex-container:
+      justify-content: center;
+      align-item: center;
+  
+      cũng cho kết quả tương tự,
+      nhưng cách margin: auto này
+      ngắn gọn hơn
+    */
+}
+
+/* Chart layout */
+.chart-layout {
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    height: 320px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around; /* Căn khoảng cách khoảng trắng */
+    align-items: flex-end; /*Đây là xét cho thăng cha bằng với align-self : flex-end xét cho thằng con ở dưới */
+}
+
+.chart-layout__item {
+    /* align-self: flex-end;  Xét cho thằng con để đẩy chiều đặt xuống cross end */
+    width: 60px;
+    color: #fff;
+    text-align: center;
+    height: var(--percent); /* Khi 1 style css được đặt inline thì sẽ coi nó là 1 biến local và có thể gán ! Đặt biến phải có 2 dấu -- đầu tiên */
+    background-color: #EF5122;
+    animation: growth ease-in 0.5s;
+}
+
+@keyframes growth {
+    from {
+        opacity: 0;
+        height: calc(var(--percent) - 50%);
+    }
+    to {
+        opacity: 1;
+        height: var(--percent);
+    }
+}
+
+/* End */
+.the-end {
+    margin: 12px auto 48px auto;
+    padding: 32px 0;
+    max-width: 740px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: row; 
+    /*Đây là chế độ mặc định của display : flex
+    Để có thể đảo ngược lại 2 nội dung thì dùng flex-direction : row-reverse
+   thực chất đảo 2 chiều main start và main end
+    */
+    
+}
+
+.the-end__first {
+    padding: 4px 16px;
+    background-color: #fff;
+    flex: 1;  /*Đảm bảo 2 chiều rộng nó băng nhau */
+}
+
+.the-end__second {
+    flex: 1;
+    display: flex; /*Đưa flex item con của thằng cha, lên làm cha của 2 thằng con bé trong nó*/
+    flex-direction: column; /*Đưa 2 flex Item theo chiều dọc tức theo cột. cái trên cái dưới */
+}
+
+.the-end__second-one {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: rgb(227, 192, 214);
+}
+
+.the-end__second-two {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: rgb(192, 210, 227);
+}
