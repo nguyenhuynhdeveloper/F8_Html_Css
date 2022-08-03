@@ -1,0 +1,34 @@
+/* 
+* Chọn tất cả thẻ
+h1 __Chọn tất cả thẻ h1
+div __ Chọn tất cả tag div
+div,h1 __ Chọn tất cả các tag div và h1
+.Class1  __ Chọn tất cả thẻ có class có nameclass1
+#Id1 __ Chọn tất cả tag có nameId1
+.Class1.Class2 __ Chọn tất cả các tag có cả name class 1 và class2 được được đặt trong thuộc tính class của nó
+.Class1 .Class2 __Chọn tất cả các tag có Class2 là con của 1 tag có nameClass1
+
+div.Class1 __Chọn tất cả các div có nameclass1
+div#Id __ Chọn tất cả các div có nameid1
+div p __ chọn tất cả thẻ p trong thẻ div
+div>p __Chọn tất cả tag p là tag con trực tiếp của tag div
+div+p __Chọn tất cả tag P là tag liền kề sau tag div " là chỉ 1 tag p được chọn "
+div~p __Chọn tất cả tag p là tag đứng sau tag div "Là rất nhiều tag p cứ đứng sau là được chọn "
+
+
+*/
+
+
+h1 {color :azure
+    color :red
+}
+div
+{
+    color :blueviolet
+}
+.h4 {color: rgb(148, 202, 46);}
+div table{color :yellowgreen}
+div~div{color:rgb(196, 225, 65)}
+
+h3~p{color :rgb(132, 130, 134)}
+h3+p {color :blue}
