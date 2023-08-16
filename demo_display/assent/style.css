@@ -1,13 +1,13 @@
 /* 
  CSS flexbox
  display : flex | inline-flex
- flex-direction: row| column  // row laf nằm ngang . colum là nằm dọc 
+ flex-direction: row| column  // row là nằm ngang . colum là nằm dọc 
  flex-wrap : nowrap | wrap | wrap-reverse //đảm bảo tất cả nằm ngang không xuống dòng | cho xuống dòng  | đảo đầu main và cross
 
- justify-content: flex-start | flex-end | center | space-between | space-around // Căn được phươgn hướng của flex item theo chiều ngang main axis // dành cho thằng cha flexBox chứa flexItem 
+ justify-content: flex-start | flex-end | center | space-between | space-around // Căn được phương hướng của flex item theo chiều ngang main axis // dành cho thằng cha flexBox chứa flexItem 
  justify-seft: flex-start | flex-end | center // Căn được phương hướng của flex Item theo chiều ngnag main Axis / Xét cho thằng con Flex Item nằm trong thằng cha Flex Box ., xét cho 1 trong 2 thôi 
  
- align-content :    flex-start | flex-end | center // Căn được chiều dọc theo chiều cross Axis xét cho thằng cha
+ align-content : flex-start | flex-end | center // Căn được chiều dọc theo chiều cross Axis xét cho thằng cha
  align-self: flex-start | flex-end | center // Xét cho thằng con 
 
  flex-basis: <length>  // Xét được flex main size

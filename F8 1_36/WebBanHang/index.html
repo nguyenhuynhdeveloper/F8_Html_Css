@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Web Bán Shoping</title>
     <link rel="stylesheet" href="main.css">
-<style>
-
-
+    <style>
 /*
+
 BÀI 14 : Độ ưu tiên trong CSS 
 * Chọn tất cả thẻ
 h1 __Chọn tất cả thẻ h1
@@ -29,7 +29,7 @@ div~p __Chọn tất cả tag p là tag đứng sau tag div "Là rất nhiều t
 
 
 */
-/* 
+        /* 
 BÀI 15 : Đặt biến trong CSS
 --name variable
 
@@ -39,12 +39,15 @@ h1{
     --my-color :green
     color: var(--my-color)}  __Đây là cách đặt biến local chỉ sài cho h1
 */
-:root {--text-color : red}
-h1{ color: var(--text-color)
+        :root {
+            --text-color: red
+        }
 
-}
+        h1 {
+            color: var(--text-color)
+        }
 
-/* 
+        /* 
 BÀI 16 Đơn vị trong CSS
  1 Absolute Units __Đơn vị tuyệt đối 
  .px __Không thay đổi kích thước khi trình duyệt thay đổi kích thước
@@ -62,19 +65,21 @@ BÀI 16 Đơn vị trong CSS
   vh __Viewport height Chiều dọc trình duyệt  // không khuyến khích 
 
 */
-h1{
-    font-size     :  100px; 
-    /* Đơn vị Normal là 16px */
-}
-html{
-    font-size: 18px;
-}
-h2{
-    font-size: 2rem;
-    color: palevioletred
-}
+        h1 {
+            font-size: 100px;
+            /* Đơn vị Normal là 16px */
+        }
 
-/* 
+        html {
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: palevioletred
+        }
+
+        /* 
 BÀI 17 CSS Funtion
  var()
  linear- gradient ()
@@ -85,25 +90,29 @@ BÀI 17 CSS Funtion
  attr()  __Attribite tạo ra một lớp giả lấy attr của tag đó gắn cho content
 
 */
-/* BÀI 17 */
-    /* .box {
+   
+        /* .box {
         width :calc(1px + 200px);
         height : 500px;
         background-color :rgba(135, 138, 108, 0.568);
     } */
-    .box::after{
-        content : attr(data-tittle)
-    }
-a::after
+        .box::after {
+            content: attr(data-tittle)
+        }
 
-{
-    content: "("attr(href)")"; /* Trong trường hợp cần nối tiếp chuỗi ký tự thì mới dùng cặp nháy "" ở ngoài cùng*/
-}
-.box:hover  /* Khi di chuột qua đối tượng sẽ có thuộc tính css được khai báo */
-{
-background-color: #333;
-}
-/* 
+        a::after {
+            content: "(" attr(href)")";
+            /* Trong trường hợp cần nối tiếp chuỗi ký tự thì mới dùng cặp nháy "" ở ngoài cùng*/
+        }
+
+        .box:hover
+
+        /* Khi di chuột qua đối tượng sẽ có thuộc tính css được khai báo */
+            {
+            background-color: #333;
+        }
+
+        /* 
 BÀI 18 Pseudo Classes __Lớp giả //  hiệu ứng  
 :root   __Lớp này tham chiếu tới phần tử gốc là thẻ html của trang
 :hover    __Định nghĩa vô số CSS vào trong style đó nhưng chỉ được kích hoạt khi di chuột vào đối tượng đó 
@@ -113,7 +122,7 @@ BÀI 18 Pseudo Classes __Lớp giả //  hiệu ứng
 
 
 */
-/* 
+        /* 
 BÀI 19 Pseudo Elements __Phần tử giả tức không cần viết mã html mà chỉ cần viết mã css thôi // Lựa chọn tập con 
 ::before __ Không viết tag html mà dùng selector trong CSS rồi khai báo tạo 1 tag đứng trước Selector được chọn , và CSS cho element giả before đó luôn 
 ::after
@@ -121,8 +130,8 @@ BÀI 19 Pseudo Elements __Phần tử giả tức không cần viết mã html m
 ::first-line
 ::selection
 */
-/* BÀI 18 */
-/* .box::before  
+        /* BÀI 18 */
+        /* .box::before  
 {
     content: "";
     display: block;
@@ -130,12 +139,11 @@ BÀI 19 Pseudo Elements __Phần tử giả tức không cần viết mã html m
     height: 100px;
     background-color: #fff;
 } */
-h1::first-letter
-{
-    font-size: 300px;
-}
+        h1::first-letter {
+            font-size: 300px;
+        }
 
-/* 
+        /* 
 BÀI 20 CSS Padding  __Đệm cho Elements
 Padding __Lớp đệm 
 border __Lớp viền 
@@ -143,42 +151,46 @@ margin __Khoảng lề
 
 */
 
-/* 
+        /* 
 BÀI 21 CSS Border __ Viền cho Elements
 Lớp vỏ lớp viền ngoài cùng của đối tượng. Trong Computed thì là hình nét liền 
   
 
 */
-.box3{
-/* BÀI 20 CSS Border */
-border-style: dotted;
-    border-color: beige;
-    border-top-width: 8px;
-    border-right-width: 10px;
-    border-bottom-width: 12px;
-    border-left-width: 14px;
+        .box3 {
+            /* BÀI 20 CSS Border */
+            border-style: dotted;
+            border-color: beige;
+            border-top-width: 8px;
+            border-right-width: 10px;
+            border-bottom-width: 12px;
+            border-left-width: 14px;
 
-    border-top: 10px solid #333;
-    border: solid 10px #222;
-}
+            border-top: 10px solid #333;
+            border: solid 10px #222;
+        }
 
-/* 
+        /* 
 BÀI 22 CSS Margin 
 padding và border chỉ có thể làm dầy bản thân lên thôi .
 để tạo khoảng cách xa với cách đối tượng khác phải dùng margin
 */
-.box3 
-{
-  /* BÀI 22 CSS Margin */
+        .box3 {
+            /* BÀI 22 CSS Margin */
 
-margin-top:20px;
-margin-left: 30px;
-margin: 10px;  /*Khi chỉ có 1 giá trị truyền vào sẽ đẩy ra cả 4 hướng*/
-margin: 10px 12px; /* Trên Dưới - Phải Trái*/
-margin: 8px 10px 12px; /*Trên -  Phải Trái - Dưới*/
-margin:8px 10px 12px 14px;  /*Trên -Phải -Dưới -Trái */
-}
-/* 
+            margin-top: 20px;
+            margin-left: 30px;
+            margin: 10px;
+            /*Khi chỉ có 1 giá trị truyền vào sẽ đẩy ra cả 4 hướng*/
+            margin: 10px 12px;
+            /* Trên Dưới - Phải Trái*/
+            margin: 8px 10px 12px;
+            /*Trên -  Phải Trái - Dưới*/
+            margin: 8px 10px 12px 14px;
+            /*Trên -Phải -Dưới -Trái */
+        }
+
+        /* 
 BÀI 22 CSS Box-Sizing
 Để cố định kích thước của elements = sum border+ Padding+ Contents
 
@@ -186,49 +198,63 @@ box-sizing: border-box
 box-sizing: content-box là dạng mặc định nếu k khai báo gì cho box-sizing
 
 */
-/* BÀI 23 CSS box-sizing  */
-box-sizing: border-box; /* Nhằm mục đích khi thay đối kích thước của padding + border thì tổng kích thước vẫn giữ nguyên bằng khai báo */
+        /* BÀI 23 CSS box-sizing  */
+        box-sizing: border-box;
+        /* Nhằm mục đích khi thay đối kích thước của padding + border thì tổng kích thước vẫn giữ nguyên bằng khai báo */
 
 
-}
-.box1{background-color: aqua;}
-.box2{background-color: rgb(94, 134, 19);}
-.box3{background-color: rgb(55, 95, 95);}
 
-.box3{
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    Padding-left: 10px;
-     
-    padding: 10px;  /*Khi chỉ có 1 giá trị truyền vào sẽ đẩy ra cả 4 hướng*/
-    padding: 10px 12px; /* Trên Dưới - Phải Trái*/
-    padding: 8px 10px 12px; /*Trên -  Phải Trái - Dưới*/
-    padding:8px 10px 12px 14px;  /*Trên -Phải -Dưới -Trái */
-  
-}
-/* 
+        .box1 {
+            background-color: aqua;
+        }
+
+        .box2 {
+            background-color: rgb(94, 134, 19);
+        }
+
+        .box3 {
+            background-color: rgb(55, 95, 95);
+        }
+
+        .box3 {
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            Padding-left: 10px;
+
+            padding: 10px;
+            /*Khi chỉ có 1 giá trị truyền vào sẽ đẩy ra cả 4 hướng*/
+            padding: 10px 12px;
+            /* Trên Dưới - Phải Trái*/
+            padding: 8px 10px 12px;
+            /*Trên -  Phải Trái - Dưới*/
+            padding: 8px 10px 12px 14px;
+            /*Trên -Phải -Dưới -Trái */
+
+        }
+
+        /* 
 Phần 6 Thuộc tính tạo viền 
 BÀI 24: CSS Background-clip
 
 Mặc định backgound-color: Sẽ tính từ border nhưng có thể thay đổi để tính đổ màu background từ border hay từ padding - content
 */
 
-/* Bài 23 CSS Background-clip */
-.header{
-    width: 100%;
-    height: 80px;
-    background-color: rgb(14, 13, 12);
-    box-sizing: border-box;
-    border: 10px #ccc solid;
-    padding: 10px;
-    background-clip: content-box;
-    margin-bottom: 20px;
-    position: fixed;
-    top:0;
-}
-  
-/* Bài 25 CSS background-image
+        /* Bài 23 CSS Background-clip */
+        .header {
+            width: 100%;
+            height: 80px;
+            background-color: rgb(14, 13, 12);
+            box-sizing: border-box;
+            border: 10px #ccc solid;
+            padding: 10px;
+            background-clip: content-box;
+            margin-bottom: 20px;
+            position: fixed;
+            top: 0;
+        }
+
+        /* Bài 25 CSS background-image
 background-image: url(),url(); // Cái url nào viết trước cái đó ở trên
 background-image: linear-gradient(67deg, #color1, #color2);  // Đổ background màu từ màu 1 sang màu 2
 
@@ -236,40 +262,42 @@ background-image: linear-gradient(67deg, #color1, #color2);  // Đổ background
 
 
 */
-.header1{
-    margin-top: 100px;
-    width: 100%;
-    height: 100vh;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSuMG189CIMqpbsAs7ASm_m3Ok1eKjDbHWWQ&usqp=CAU);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    /* border: 10px solid; */
-    background-origin: content-box;
-    background-position: ;
+        .header1 {
+            margin-top: 100px;
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSuMG189CIMqpbsAs7ASm_m3Ok1eKjDbHWWQ&usqp=CAU);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* border: 10px solid; */
+            background-origin: content-box;
+            background-position: ;
 
-}
-.header2{
-    width: 100vw;
-    height: 100vh;
-    background-image:linear-gradient(67deg,rgba(255,255,0,0.5), rgba(26, 26, 13, 0.5)),url(https://allimages.sgp1.digitaloceanspaces.com/photographercomvn/2021/03/Tong-hop-hinh-anh-gai-xinh-Ha-Noi-dep-hut.jpg);
-    background-size: auto 100%;  /*Tham số đầu tiên là chiều rộng, Tham số thứ 2 là chiều cao */
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-}
+        }
 
-/* BÀI 26 CSS background-size keywwords
+        .header2 {
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(67deg, rgba(255, 255, 0, 0.5), rgba(26, 26, 13, 0.5)), url(https://allimages.sgp1.digitaloceanspaces.com/photographercomvn/2021/03/Tong-hop-hinh-anh-gai-xinh-Ha-Noi-dep-hut.jpg);
+            background-size: auto 100%;
+            /*Tham số đầu tiên là chiều rộng, Tham số thứ 2 là chiều cao */
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+        }
+
+        /* BÀI 26 CSS background-size keywwords
 background-size: contain;  //sẽ tự động lấy chiều dài nhất có thể ngang hoặc dọc với tiêu chí k để bức ảnh bị che khuất 1 phần nào cả => sẽ tạo khoảng trắng
 backfround-size: cover;   // sẽ tự động chọn chiều dài nhất của bức ảnh chấp nhận việc che khuất bức ảnh . càng kéo rộng ra càng che khuất => không chấp nhận để khoảng trắng
 
 */
-/*  
+        /*  
 BÀI 27 background-origin
 background-origin  // Set đổ hình ảnh từ padding -border-margin  mặc định là padding -box
                    // tương tự với background-clip dùng cho background-color 
 
 */
-/* BÀi 28 background-position
+ /* BÀi 28 background-position
 Căn vị trí bức ảnh 
 top
 bottom 
@@ -282,7 +310,7 @@ top 20px right 20px //Bên trên dịch xuống dưới 20px . bên phải dịc
  20px 50px   // Dịch trục X 20 px dịch trục dọc 50px
 
 */
-/* BÀI 29 background shorthand
+        /* BÀI 29 background shorthand
 background: Color or image (url)-> repeat ->position -> /background-size ;
 
 
@@ -333,158 +361,158 @@ BÀI 35: Phân biệt & Tên gọi các thành phần
 6. Footed // Chân trang
 */
 
-h1{
-    position: relBander
+        h1 {
+            position: relBander;
 
-    bottom: 10px;
-    left: 400px;
-}
+            bottom: 10px;
+            left: 400px;
+        }
 
-.box-child {
-    width :20px;
-    height : 20px;
-    background-color: aqua;
-    position:absolute;
-    top : 0px;
-    right:0px;
-}
-</style>
+        .box-child {
+            width: 20px;
+            height: 20px;
+            background-color: aqua;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+    </style>
 
 
 
 </head>
+
 <body>
 
-  <div class="header"> </div>  
-  <div class="header1"> </div>
-  <div class="header2"> </div>
+    <div class="header"> </div>
+    <div class="header1"> </div>
+    <div class="header2"> </div>
 
     <!-- <a href="https://fullstack.edu.com.vn">Học lập trình F8</a> -->
-<div class="box" data-tittle=" ">Box 0
-    <div class="box-child"> 
-        Box child
+    <div class="box" data-tittle=" ">Box 0
+        <div class="box-child">
+            Box child
+        </div>
     </div>
-</div>
-<div class="box box1">Box1</div>
-<div class="box box2">Box2</div>
-<div class="box box3">Box3</div>
+    <div class="box box1">Box1</div>
+    <div class="box box2">Box2</div>
+    <div class="box box3">Box3</div>
 
 
-   <h1 >Trang web Shoping</h1>
-   <h2>Danh mục hàng hóa </h2>
-<h3></h3>
-<h4></h4>
-<h5></h5>
-<h6></h6>
+    <h1>Trang web Shoping</h1>
+    <h2>Danh mục hàng hóa </h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
 
-        <div></div>
-<div></div>
-<span></span>
-<span></span>
-<p></p>
-<p></p>
+    <div></div>
+    <div></div>
+    <span></span>
+    <span></span>
+    <p></p>
+    <p></p>
 
-<ul>
-    <li>Xin chào </li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li>Cac bạn </li>
-</ul>
-
-
-
-<label for=""></label>
-<a href="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.6435-9/52586401_618674655249182_1031688867196960768_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=174925&_nc_ohc=ANCtkjqvarwAX9AZ8oW&tn=yXKIlEvOscXu4htj&_nc_ht=scontent.fsgn2-4.fna&oh=3d5b09fe4a1764ed2e8d85cb2b5402db&oe=61B83E3C">Đây Là Link Web </a> <br/>
-
-<label for=""></label>
-<img src="Source" alt="Đây là ghi chú">
-
-<form action="">
-
-
-<label for="">Mời bạn đăng nhập </label><br/>
-
-
-<label for="">Tên Đăng Nhập </label><br/>
-
-<input type="text" placeholder="Tên Người Dùng"><br/>
-<label for="">Mật Khẩu </label><br/>
-</r>
-<input type="password"> <br/>
-<input type="submit" value="Đăng Nhập"> <br/><br/>
+    <ul>
+        <li>Xin chào </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li>Cac bạn </li>
+    </ul>
 
 
 
-<input type="button" ><br/>
+    <label for=""></label>
+    <a
+        href="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.6435-9/52586401_618674655249182_1031688867196960768_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=174925&_nc_ohc=ANCtkjqvarwAX9AZ8oW&tn=yXKIlEvOscXu4htj&_nc_ht=scontent.fsgn2-4.fna&oh=3d5b09fe4a1764ed2e8d85cb2b5402db&oe=61B83E3C">Đây
+        Là Link Web </a> <br />
 
-<label for=""style =" color: red; background : pink">Lựa Chọn Đáp Án đúng cho câu hỏi </label> <br/>
-<input type="radio" name="Name 1"> Đáp Án 1
-<input type="radio" name="Name 1"> Đáp Án 2
-<input type="radio" name="Name 1"> Đáp Án 3 <br/>
+    <label for=""></label>
+    <img src="Source" alt="Đây là ghi chú">
+
+    <form action="">
 
 
-<label for="">Lựa chọn mặt hàng bạn muốn mua</label>
-<select name="" id="">
-    
-<option value="">Thời Trang</option>
-<option value="">Thực Phẩm </option>
-<option value="">Nơi ở </option>
-<option value="">Xe cộ</option>
-<option value="">Giải Trí</option> 
-</select>
+        <label for="">Mời bạn đăng nhập </label><br />
 
-</form>
-<table >
-    <thead style="color: red">
-        <tr>    
-        <th>
-            Mặt Hàng
-        </th>
-        <th>
-            Số Lượng
-        </th>
-        <th>
-            Thành Tiền
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>
-           Xe Mecsdesben
-        </td>
-        <td>
-            1
-        </td>
-        <td>10.000.000.000</td>
-    </tr>
-        <tr>
-         <td>
-            Iphone Max Pro 
-        </td>
-        <td>
-        10 
-        </td>
-        <td>1.000.000.000</td> 
-    </tr>
-</tr>
-        <tr>
-         <td>
-            Biệt Thự
-        </td>
-        <td>
-        1
-        </td>
-        <td>100.000.000.000</td> 
-    </tr>
 
-    </tbody>
-</table>
+        <label for="">Tên Đăng Nhập </label><br />
+
+        <input type="text" placeholder="Tên Người Dùng"><br />
+        <label for="">Mật Khẩu </label><br />
+        </r>
+        <input type="password"> <br />
+        <input type="submit" value="Đăng Nhập"> <br /><br />
+
+
+
+        <input type="button"><br />
+
+        <label for="" style=" color: red; background : pink">Lựa Chọn Đáp Án đúng cho câu hỏi </label> <br />
+        <input type="radio" name="Name 1"> Đáp Án 1
+        <input type="radio" name="Name 1"> Đáp Án 2
+        <input type="radio" name="Name 1"> Đáp Án 3 <br />
+
+
+        <label for="">Lựa chọn mặt hàng bạn muốn mua</label>
+        <select name="" id="">
+
+            <option value="">Thời Trang</option>
+            <option value="">Thực Phẩm </option>
+            <option value="">Nơi ở </option>
+            <option value="">Xe cộ</option>
+            <option value="">Giải Trí</option>
+        </select>
+
+    </form>
+    <table>
+        <thead style="color: red">
+            <tr>
+                <th>
+                    Mặt Hàng
+                </th>
+                <th>
+                    Số Lượng
+                </th>
+                <th>
+                    Thành Tiền
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Xe Mecsdesben
+                </td>
+                <td>
+                    1
+                </td>
+                <td>10.000.000.000</td>
+            </tr>
+            <tr>
+                <td>
+                    Iphone Max Pro
+                </td>
+                <td>
+                    10
+                </td>
+                <td>1.000.000.000</td>
+            </tr>
+            </tr>
+            <tr>
+                <td>
+                    Biệt Thự
+                </td>
+                <td>
+                    1
+                </td>
+                <td>100.000.000.000</td>
+            </tr>
+
+        </tbody>
+    </table>
 
 </body>
 
-        </html>
-
-
-
+</html>

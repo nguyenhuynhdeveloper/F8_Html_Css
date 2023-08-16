@@ -23,33 +23,39 @@ h1 >h3 {
 }
 
 /* 
-.class	.intro	Chọn tất cả các phần tử có class=”intro”	
-#id	#firstname	Chọn tất cả các phần tử có id=”firstname”	
+.class//	.intro	Chọn tất cả các phần tử có class =”intro”	
+#id//	#firstname	Chọn tất cả các phần tử có id=”firstname”	
+
 *	*	Chọn tất cả các phần tử	
-element	p	Chọn tất cả các phần tử  <p>	
-element,element	div, p	Chọn tất cả các phần tử <div>và phần tử <p>	
-element element	div p	 Chọn tất cả các phần tử <p> và bên trong phần tử  <div> // Bắt tất cả thằng con k kể bao nhiêu cấp 	
-element>element	div > p	Chọn tất cả các phần tử <p> có phần tử cha là <div>	// Bắt từng thằng p là con trực tiếp của div
-element1~element2	p ~ ul	Chọn tất cả các phần tử  <ul> được đặt trước bởi một phần tử  <p>  //Bắt tất cả thằng p nào cùng cấp và viết sau ul bất kể ngắt quãng 	
-element+element	div + p	Chọn tất cả các phần tử <p> được đặt phía sau phần tử  <div>   // Bắt từng thằng p có thằng div cùng cấp đứng ngay trước liền kề nó 	
+element//	p	Chọn tất cả các phần tử  <p>	
+element,element//	div, p	Chọn tất cả các phần tử <div>và phần tử <p>	
+element element//	div p	 Chọn tất cả các phần tử <p> là con của phần tử <div> Không kể bao nhiêu cấp // Bắt tất cả thằng con k kể bao nhiêu cấp 	
+element>element//	div > p	Chọn tất cả các phần tử <p> có phần tử cha là <div>	// Bắt từng thằng p là con trực tiếp của div
+element1~element2//	p ~ ul	Chọn tất cả các phần tử <ul> được đặt trước bởi một phần tử  <p>  //Bắt tất cả thằng p nào cùng cấp và viết sau ul bất kể ngắt quãng 	
+element+element	div// + p	Chọn tất cả các phần tử <p> được đặt phía sau phần tử  <div>   // Bắt từng thằng p có thằng div cùng cấp đứng ngay trước liền kề nó 	
+
 [attribute]             	[target]	Chọn tất cả các phần tử có cùng thuộc tính
 [attribute=value]	        [target=_blank]	Chọn tất cả các phần tử có thuộc tính bằng giá trị( target=”_blank”)	
 [attribute~=value]      	[title~=flower]	Chọn tất cả các phần tử có tiêu đề của thuộc tính có chứa từ “flower”	
 [attribute|=value]	        [lang|=en]	Chọn tất cả các phần tử có giá trị thuộc tính “lang” bắt đầu bằng “en”	
 [attribute^=value]	        a[href^=”https”]	Chọn tất cả các phần tử  <a> có giá trị thuộc tính “href” bắt đầu bằng “https”	
 [attribute$=value]      	a[href$=”.pdf”]	Chọn tất cả các phần tử <a> có giá trị thuộc tính “href” kết thúc bằng”.pdf”	
-[attribute*=value]      	a[href*=”timoday”]	Chọn tất cả các phần tử <a> có giá trị thuộc tính “href” chứa chuỗi”timoday”	
+[attribute*=value]      	a[href*=”timoday”]	Chọn tất cả các phần tử <a> có giá trị thuộc tính “href” chứa chuỗi”timoday”
+	
 :active	    a:active	Chọn tất cả các liên kết được kích hoạt	
+
 ::after	    p::after	Chèn thêm nội dung ngay phía sau của các phần tử <p>	
 ::before	p::before	Chèn thêm nội dung ngay phía trước của các phần tử <p>	
 :checked	input:checked	Chọn tất cả các phần tử <input> đang được chọn (selected)	
 :disabled	input:disabled	Chọn tất cả các phần tử <input> đang được vô hiệu hoá (disabled)	
+
 :empty  	p:empty	Chọn tất cả các phần tử  <p> không chứa phần tử con (bao gồm cả các nút văn bản)	
 :enabled	input:enabled	Chọn tất cả các phần tử <input> đang được kích hoạt	
 :first-child	p:first-child	Chọn các phần tử  <p> có phần tử đầu tiên của phần tử cha chứa nó	
 ::first-letter	p::first-letter	Chọn kí tự đầu tiên của phần tử  <p>	
 ::first-line	p::first-line	Chọn dòng đầu tiên của các phần tử <p>	
 :first-of-type	p:first-of-type	Chọn tất cả các phần tử <p> có phần tử đầu tiên <p> là phần tử cha	
+
 :focus      	input:focus	Chọn các phần tử <input> nhận focus	
 :hover	        a:hover	Chọn các liên kết khi chuột di chuyển qua	
 :in-range	    input:in-range	Chọn phần tử <input> có giá trị  trong phạm vi nhất định	

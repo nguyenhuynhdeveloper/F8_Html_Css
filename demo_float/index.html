@@ -14,5 +14,21 @@
         <div class="float">float 2</div>
         <div class="float float3">float 3</div>
     </div>
+    <script>
+        let a = {name : "nhan", age : 18}
+        let b = a  // Copy 1 object : copy ô nhớ của nó thồi , tức tham chiếu tới đúng ô nhớ của a
+
+        a= {name: "thắng"}  // Tạo 1 ô nhớ mới
+        let c = JSON.parse(JSON.stringify(a))  // Để chỉ copy giá trị : object , array 
+
+        // a.name=  "vượng"
+
+
+
+        console.log(JSON.stringify(a))
+        console.log(JSON.stringify(b))
+        console.log(JSON.stringify(c))
+
+    </script>
 </body>
 </html>
